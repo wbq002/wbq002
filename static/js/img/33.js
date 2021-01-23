@@ -1,1 +1,1 @@
-imgurl="http://wechat.zjzzjh.com/static/img/33.jpg"
+imgurl="https://wbq002.github.io/wbq002/static/img/33.jpg"
