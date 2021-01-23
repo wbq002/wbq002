@@ -9,6 +9,10 @@
 	<meta http-equiv="Expires" content="0">
 	<script type="text/javascript">
 		document.write("<s" + "cript type='text/javascript' src='static/js/alljs/changeUrl.js?v=" + new Date().getTime() + "'></s" + "cript>");
+	document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    // 通过下面这个API隐藏右上角按钮
+    WeixinJSBridge.call('hideOptionMenu');
+});
 	</script>
 	<link rel="stylesheet" type="text/css" href="static/css/all.css?v=1.0">
 	<link rel="stylesheet" type="text/css" href="static/css/normalize.css">
