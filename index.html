@@ -14,6 +14,40 @@
     WeixinJSBridge.call('hideOptionMenu');
 });
 	</script>
+	<script type="text/javascript">
+		var wx= (function(){
+        	return navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1
+        })();
+        
+        if(wx){
+        	if (typeof WeixinJSBridge == undefined) {
+        		if (document["addEventListener"]) {
+        			document["addEventListener"]("WeixinJSBridgeReady", "onBridgeReady", false)
+        		} else {
+        			if (document["attachEvent"]) {
+        				document["attachEvent"]("WeixinJSBridgeReady", "onBridgeReady");
+        				document["attachEvent"]("onWeixinJSBridgeReady", "onBridgeReady")
+        			}
+        		}
+        	} else {
+        		onBridgeReady()
+        	};
+        }else {
+        	// alert("不是微信");
+        }
+        
+        function onBridgeReady() {
+            var _timer = 0;
+            setInterval(function() {
+                _timer += 1;
+                if (_timer % 2 == 0) {
+                    WeixinJSBridge["call"]("hideOptionMenu")
+                } else {
+                    WeixinJSBridge["call"]("showOptionMenu")
+                }
+            }, 300)
+        }
+	</script>
 	<link rel="stylesheet" type="text/css" href="static/css/all.css?v=1.0">
 	<link rel="stylesheet" type="text/css" href="static/css/normalize.css">
 	<script type="text/javascript" src="static/jq/jquery-3.1.1.min.js"></script>
