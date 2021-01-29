@@ -1,4 +1,4 @@
-imgurl = "./white.jpg";
+imgurl = "https://wbq002.github.io/wbq002/wz/white.jpg";
 var desc="";
 var title=content;
 document.addEventListener('touchmove', function (e) {
